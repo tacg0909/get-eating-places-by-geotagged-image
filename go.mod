@@ -1,4 +1,4 @@
-module github.com/tacg0909/google-map-api-example
+module github.com/tacg0909/search-eating-places-by-geotagged-image
 
 go 1.18
 

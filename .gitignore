@@ -4,7 +4,7 @@
 *.dll
 *.so
 *.dylib
-google-map-api-example
+search-eating-places-by-geotagged-image
 function.zip
 
 # Test binary, built with `go test -c`

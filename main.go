@@ -14,14 +14,14 @@ import (
 )
 
 func main() {
-    lambda.Start(GoogleMapApiExample)
+    lambda.Start(SearchEatingPlacesByGeotaggedImage)
 }
 
 type Event struct {
     Image string `json:"image"`
 }
 
-func GoogleMapApiExample(e Event) (places []PlaceType, err error) {
+func SearchEatingPlacesByGeotaggedImage(e Event) (places []PlaceType, err error) {
     b, err := base64.StdEncoding.DecodeString(e.Image)
     if err != nil {
         return
