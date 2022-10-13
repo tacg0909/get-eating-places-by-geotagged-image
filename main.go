@@ -1,16 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"encoding/base64"
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
-	"os"
+    "bytes"
+    "encoding/base64"
+    "encoding/json"
+    "fmt"
+    "io"
+    "net/http"
+    "os"
 
-	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/rwcarlsen/goexif/exif"
+    "github.com/aws/aws-lambda-go/lambda"
+    "github.com/rwcarlsen/goexif/exif"
 )
 
 func main() {
@@ -19,6 +19,12 @@ func main() {
 
 type Event struct {
     Image string `json:"image"`
+}
+
+type PlaceType struct {
+    Name string `json:"name"`
+    PlaceId string `json:"place_id"`
+    Types []string `json:"types"`
 }
 
 func SearchEatingPlacesByGeotaggedImage(e Event) (places []PlaceType, err error) {
@@ -46,12 +52,6 @@ func SearchEatingPlacesByGeotaggedImage(e Event) (places []PlaceType, err error)
     }
 
     return
-}
-
-type PlaceType struct {
-    Name string `json:"name"`
-    PlaceId string `json:"place_id"`
-    Types []string `json:"types"`
 }
 
 type PlacesType struct {
