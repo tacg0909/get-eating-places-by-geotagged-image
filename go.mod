@@ -1,4 +1,4 @@
-module github.com/tacg0909/search-eating-places-by-geotagged-image
+module github.com/tacg0909/get-eating-places-by-geotagged-image
 
 go 1.18
 

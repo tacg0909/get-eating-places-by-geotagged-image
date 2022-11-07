@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-    lambda.Start(SearchEatingPlacesByGeotaggedImage)
+    lambda.Start(getEatingPlacesByGeotaggedImage)
 }
 
 type Event struct {
@@ -27,7 +27,7 @@ type PlaceType struct {
     Types []string `json:"types"`
 }
 
-func SearchEatingPlacesByGeotaggedImage(e Event) (places []PlaceType, err error) {
+func getEatingPlacesByGeotaggedImage(e Event) (places []PlaceType, err error) {
     b, err := base64.StdEncoding.DecodeString(e.Image)
     if err != nil {
         return
